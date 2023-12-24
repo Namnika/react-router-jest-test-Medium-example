@@ -1,10 +1,16 @@
-import "./styles.css";
+import NoMatch from "./page/NoMatch";
+import Main from "./page/Main";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-export default function App() {
+function App() {
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="*" element={<NoMatch />} />
+      </Routes>
+    </Router>
   );
 }
+
+export default App;
